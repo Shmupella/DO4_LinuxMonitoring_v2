@@ -1,8 +1,5 @@
 # LinuxMonitoring v2.0
 
-> При старте работы над проектом просим вас постараться хронометрировать время работы над проектом.
-> По завершении работы над проектом просим вас ответить на два вопроса [в этом опросе](https://forms.gle/V8JrqwsAJAnCgq8QA)
-
 Real-time monitoring and research of the system status.
 
 The russian version of the task can be found in the repository.
@@ -100,7 +97,7 @@ Write a bash script. The script is run with 6 parameters. An example of running 
 **Parameter 6** - file size (in kilobytes, but not more than 100).
 
 Folder and file names must only consist of the letters specified in the parameters and use each of them at least 1 time.  
-The length of this part of the name should be at least 4 characters, plus the script run date in DD.MM.YY format, separated by underscores, for example: \
+The length of this part of the name should be at least 4 characters, plus the script run date in DDMMYY format, separated by underscores, for example: \
 **./aaaz_021121/**, **./aaazzzz_021121** 
 
 If `az` has been specified for a folder or a file name, there can be no inverse entry: \
@@ -125,8 +122,8 @@ Write a bash script. The script is run with 3 parameters. An example of running 
 **Parameter 3** - is the file size (in Megabytes, but not more than 100).
 
 Folder and file names must only consist of the letters specified in the parameters and use each of them at least 1 time.  
-The length of this part of the name should be at least 5 characters, plus the script run date in DD.MM.YY format, separated by underscores, for example: \
-**./aaaz_021121/**, **./aaazzzz_021121** 
+The length of this part of the name should be at least 5 characters, plus the script run date in DDMMYY format, separated by underscores, for example: \
+**./aaazz_021121/**, **./aaazzzz_021121** 
 
 If `az` has been specified for a folder or a file name, there can be no inverse entry: \
 **./zaaa_021121/** i.e. the order of the specified characters in the parameter must be maintained.
@@ -255,3 +252,6 @@ The page itself can be refreshed within a bash script or a program (in a loop), 
 ##### Change the **Prometheus** configuration file so it collects information from the page you created.
 
 ##### Run the same tests as in [Part 7](#part-7-prometheus-and-grafana)
+
+
+💡 [Tap here](https://forms.yandex.ru/u/6357f4efd0468834861f10cd/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.
