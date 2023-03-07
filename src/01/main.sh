@@ -11,6 +11,7 @@ file_letters=$5
 file_size=$6
 count_param=$#
 
+chmod +x check.sh create.sh
 
 check $path $count_d $dir_letters $count_f $file_letters $file_size $count_param
 creation_directory_with_files

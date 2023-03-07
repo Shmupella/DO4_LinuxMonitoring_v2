@@ -3,7 +3,7 @@
 free_memory_kb=$(df / | awk 'NR==2{print $4}')
 free_memory_mb=$(echo "$free_memory_kb 1024" | awk '{printf "%.0f", $1 / $2}')
 date=_$(date +"%d%m%y")
-dir_letters=$(echo $5| awk -F . '{print $1}')
+
 
 max_file_length=248
 ex_letters=$(echo $5| awk -F . '{print $2}')

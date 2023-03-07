@@ -10,6 +10,7 @@ size_of_file_check='^[0-9]+kb|Kb|KB|kB$'
 
 num_size=$(echo $6 | sed 's/'[kK][bB]'//')
 
+#добавить проверку на слэш в конце
 
 check() {
     if [ $count_param -ne 6 ]
@@ -62,7 +63,6 @@ check() {
     elif [ $num_size -gt 100 ]
     then
         echo "Input error in sixth parameter! Size can\`t be over 100kb"
-        echo $num_size
         exit 10
     fi
 }
