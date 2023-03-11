@@ -1,4 +1,5 @@
-path_check='^/+'
+path_check='^/+[-_./0-9a-zA-Z].*[^/]$'
+path_check2='^/$'
 dir_check='^[A-Za-z]{1,7}$'
 file_check='^[A-Za-z]{1,7}\.+[A-Za-z]{1,3}$'
 count_dir_check='^[1-9]+$'
@@ -10,17 +11,15 @@ size_of_file_check='^[0-9]+kb|Kb|KB|kB$'
 
 num_size=$(echo $6 | sed 's/'[kK][bB]'//')
 
-#добавить проверку на слэш в конце
-
 check() {
     if [ $count_param -ne 6 ]
     then
         echo "Incorrect input! Run the script using 6 parameters."
         exit 1
 
-    elif ! [[ $1 =~ $path_check  ]]
+    elif ! [[ $1 =~ $path_check || $1 =~ $path_check2 ]]
     then
-        echo "Incorrect inpit! The first parameter must be an absolute path to directory."
+        echo "Incorrect inpit! The first parameter must be an absolute path to directory without \"/\" in the end."
         exit 2
 
     elif ! [[ -d $1 ]]
