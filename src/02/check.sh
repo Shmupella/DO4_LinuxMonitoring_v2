@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir_check='^[A-Za-z]{1,7}$'
-file_check='^[A-Za-z]{1,7}\.+[A-Za-z]{1,3}$'
+file_check='^[A-Za-z]{1,7}\.{1,1}[A-Za-z]{1,3}$'
 size_of_file_check='^[0-9]+mb|Mb|MB|mB$'
 num_size=$(echo $3 | sed 's/'[mM][bB]'//')
 
@@ -27,5 +27,10 @@ check() {
     then
         echo "Input error in third parameter! Size can\`t be over 100mb"
         exit 4
+
+    elif ! [[ $3 =~ $size_of_file_check ]]
+    then
+        echo "Input error in the third parameter! Please, write size of files. Example: 123mb."
+        exit 5
     fi
 }

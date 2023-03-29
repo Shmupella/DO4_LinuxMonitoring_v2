@@ -1,4 +1,11 @@
 #!/bin/bash
 
-sudo rm -rvI $(awk '{print $1}' infod.log)
-rm info.log infod.log path_dir
+count_rm_path=$(awk 'END{print NR}' infod.log)
+
+i=1
+while [[ $i -lt $count_rm_path ]]
+do
+    path_name=$(awk 'NR == '$i' {print $1}' infod.log)
+    sudo rm -rf "$path_name"
+    ((i++))
+done
