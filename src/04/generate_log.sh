@@ -10,7 +10,7 @@ do
     do
             
            echo -n "$(shuf -n 1 -i 0-255).$(shuf -n 1 -i 0-255).$(shuf -n 1 -i 0-255).$(shuf -n 1 -i 0-255) " >> $num_logfile.log  #generate IP address
-           echo -n "- - [$(date -d $date +"%d/%b/%Y:")$(shuf -i 0-23 -n 1):$(shuf -i 0-59 -n 1):$(shuf -i 0-59 -n 1) +0000]" >> $num_logfile.log   #generate date and time of the request 
+           echo -n "- - [$(date -d $date +"%d/%b/%Y:")$(shuf -i 0-23 -n 1):$(shuf -i 0-59 -n 1):$(shuf -i 0-59 -n 1) +0000] " >> $num_logfile.log   #generate date and time of the request 
            echo -n "\"$(shuf -n 1 HTTP_methods) $(shuf -n 1 PathToResource) HTTP/1.0\" " >> $num_logfile.log  #generate request line from the client
            echo -n "$(shuf -n 1 HTTP_code) " >> $num_logfile.log     #generate HTTP status code returned to the client
            echo -n "$(shuf -n 1 -i 3-3000) "  >> $num_logfile.log    #generate size of the response sent to the client
